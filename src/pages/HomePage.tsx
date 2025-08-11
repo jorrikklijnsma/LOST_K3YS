@@ -68,9 +68,9 @@ const HomePage = () => {
             </div>
             <div className="flex flex-col items-center">
               <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full shadow-lg border-2 border-yellow-400/30 flex items-center justify-center mb-3 overflow-hidden">
-                <img src={MEINKE} alt="Meine" className="w-full h-full object-cover" />
+                <img src={MEINKE} alt="Meinke" className="w-full h-full object-cover" />
               </div>
-              <span className="text-yellow-400 text-sm font-medium">Meine</span>
+              <span className="text-yellow-400 text-sm font-medium">Meinke</span>
             </div>
           </div>
 
