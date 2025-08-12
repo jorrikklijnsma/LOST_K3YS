@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Music, Youtube, Heart, ExternalLink } from 'lucide-react';
-import GlassContainer from '../ui/GlassContainer';
 
 const Footer: React.FC = () => {
   const socialLinks = [

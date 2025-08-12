@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Headphones, Zap, Waveform, Cpu, Music } from 'lucide-react';
+import { Brain, Headphones, Zap, AudioWaveform, Cpu, Music } from 'lucide-react';
 import SkewedBackground from '../ui/SkewedBackground';
 import GlassContainer from '../ui/GlassContainer';
 
@@ -24,7 +24,7 @@ const TechSection: React.FC = () => {
     },
     {
       id: '2',
-      icon: Waveform,
+      icon: AudioWaveform,
       title: 'Human Enhancement',
       description:
         'Our creative vision and musical expertise shape every AI-generated element into something uniquely LOST K3YS.',

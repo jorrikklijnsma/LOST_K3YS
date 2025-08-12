@@ -1,107 +1,120 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SkewedBackground from '../ui/SkewedBackground';
-import GlassContainer from '../ui/GlassContainer';
+import SPACE from '../../assets/space.jpeg';
 
 const HeroSection: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="hero" className="relative">
-      <SkewedBackground variant="cosmic" className="min-h-screen">
-        {/* Hero Background Video/Animation Area */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Placeholder for future video background */}
-          <div className="from-cosmic-primary via-cosmic-secondary to-cosmic-tertiary h-full w-full bg-gradient-to-br opacity-80" />
-
-          {/* Animated golden particles */}
-          <div className="absolute inset-0">
-            {Array.from({ length: 30 }).map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute h-2 w-2 rounded-full bg-yellow-400"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  opacity: [0.3, 0.8, 0.3],
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </div>
+    <section id="hero" className="relative min-h-screen overflow-hidden">
+      {/* Space/Nebula Background */}
+      <div className="absolute inset-0">
+        {/* Placeholder for video/image background */}
+        <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900">
+          {/* Placeholder nebula background - replace with actual image/video */}
+          <div className={`JOE JOE absolute inset-0 bg-[url(${SPACE})] bg-cover bg-center opacity-80`} />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto flex min-h-screen items-center justify-center px-6">
-          <div className="text-center">
-            {/* Main Logo/Title */}
+        {/* Scattered stars effect */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 150 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-[1px] h-[1px] bg-white rounded-full opacity-60"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+              }}
+            />
+          ))}
+
+          {/* Larger glowing stars */}
+          {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-              className="mb-8"
-            >
-              <GlassContainer className="mb-4 inline-block p-2" variant="blue">
-                <span className="text-cosmic-blue text-sm font-medium tracking-wider uppercase">
-                  Hardstyle Duo
-                </span>
-              </GlassContainer>
-
-              <h1 className="mb-4 text-6xl leading-tight font-black text-white md:text-8xl lg:text-9xl">
-                <span className="block">LOST</span>
-                <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
-                  K3YS
-                </span>
-              </h1>
-            </motion.div>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-300 md:text-2xl"
-            >
-              Unlocking the frequencies that move your soul. Experience hardstyle like never before.
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <GlassContainer className="group inline-block cursor-pointer" hover={true}>
-                <button className="group-hover:text-cosmic-blue px-8 py-4 text-lg font-medium tracking-wide text-white transition-colors duration-300">
-                  Enter the Experience
-                </button>
-              </GlassContainer>
-            </motion.div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }}
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 transform"
-            >
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="flex h-10 w-6 justify-center rounded-full border-2 border-white/50"
-              >
-                <div className="mt-2 h-3 w-1 rounded-full bg-white/70" />
-              </motion.div>
-            </motion.div>
-          </div>
+              key={`glow-${i}`}
+              className="absolute w-[2px] h-[2px] bg-white rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                boxShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
+              }}
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 2 + Math.random() * 3,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
         </div>
-      </SkewedBackground>
+
+        {/* Skewed bottom section transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent transform skew-y-1 origin-bottom-right" />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative font-mono z-10 container mx-auto px-8 flex flex-col items-center justify-center min-h-screen text-center">
+        {/* Main Logo Typography */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="mb-12"
+        >
+          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-black leading-none">
+            {/* LOST - filled */}
+            <div className="text-white mb-4">
+              LOST
+            </div>
+            {/* K3YS - outlined */}
+            <div 
+              className="text-transparent font-black"
+              style={{
+                WebkitTextStroke: '3px white'
+              }}
+            >
+              K3YS
+            </div>
+          </h1>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <button onClick={() => scrollToSection('booking')}
+                 className="px-8 py-4 border-2 border-white/40 rounded-lg text-white hover:bg-white/10 hover:border-white/60 transition-all duration-300 font-medium text-lg tracking-wide cursor-pointer">
+            BOOK US
+          </button>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center"
+          >
+            <div className="w-1 h-3 bg-white/60 rounded-full mt-2" />
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

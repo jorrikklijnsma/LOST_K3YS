@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import GlassContainer from '../ui/GlassContainer';
+
+export const navItems = [
+    { id: 'info', label: 'INFO' },
+    { id: 'releases', label: 'RELEASES' },
+    { id: 'tech', label: 'TECH' },
+    { id: 'booking', label: 'BOOKING' },
+  ];
 
 const Navigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'info', label: 'About' },
-    { id: 'releases', label: 'Releases' },
-    { id: 'tech', label: 'Tech' },
-    { id: 'booking', label: 'Book Us' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,71 +31,66 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4' : 'py-6'
+      transition={{ duration: 0.8 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'py-4' : 'py-8'
       }`}
     >
-      <div className="container mx-auto px-6">
-        <GlassContainer className="px-8 py-4" variant="minimal">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <motion.div
-              className="flex cursor-pointer items-center"
-              onClick={() => scrollToSection('hero')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <img
-                src="https://placehold.co/40x40/FFD700/000000?text=L3"
-                alt="LOST K3YS Logo"
-                className="mr-3 h-10 w-10 rounded-lg"
-              />
-              <div className="text-xl font-bold tracking-wide text-white">LOST K3YS</div>
-            </motion.div>
-
-            {/* Navigation Items */}
-            <div className="hidden items-center space-x-8 md:flex">
-              {navItems.map(item => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative rounded-lg px-4 py-2 transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'text-cosmic-blue font-medium'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="bg-cosmic-blue/20 border-cosmic-blue/30 absolute inset-0 rounded-lg border"
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
-                </motion.button>
-              ))}
+      <div className="container mx-auto px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            className="cursor-pointer"
+            onClick={() => scrollToSection('hero')}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="text-white font-bold text-xl tracking-wide leading-tight">
+              <div>LOST</div>
+              <div>K3YS</div>
             </div>
+          </motion.div>
 
-            {/* Mobile Menu Button */}
+          {/* Navigation Items */}
+          <div className="hidden md:flex items-center space-x-12">
+            {navItems.map((item) => (
+              <motion.button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-white hover:text-gray-300 transition-all duration-300 font-normal text-lg ${activeSection === item.id && 'scale-110 border-b-1'}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
+            
+            {/* Contact Button */}
             <motion.button
-              className="p-2 text-white md:hidden"
+              onClick={() => scrollToSection('booking')}
+              className="px-6 py-3 border-2 border-white/30 rounded-lg text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="flex h-6 w-6 flex-col items-center justify-center">
-                <span className="mb-1 h-0.5 w-4 bg-white"></span>
-                <span className="mb-1 h-0.5 w-4 bg-white"></span>
-                <span className="h-0.5 w-4 bg-white"></span>
-              </div>
+              CONTACT
             </motion.button>
           </div>
-        </GlassContainer>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="md:hidden text-white p-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+            </div>
+          </motion.button>
+        </div>
       </div>
     </motion.nav>
   );
