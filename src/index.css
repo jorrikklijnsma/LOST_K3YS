@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@theme {
+
+  --color-cosmic-primary: oklch(10.2% 0.15 295);
+  --color-cosmic-secondary: oklch(13.3% 0.21 286);
+  --color-cosmic-tertiary: oklch(6.1% 0.04 261);
+  --color-cosmic-blue: oklch(78.6% 0.44 229);
+  --color-cosmic-blue-glow: rgba(0, 212, 255, 0.5);
+
+  --color-white: rgba(255, 255, 255, 0.15);
+  --color-white-border: rgba(255, 255, 255, 0.2);
+  --color-white-blue: rgba(0, 212, 255, 0.1);
+  --color-white-blue-border: rgba(0, 212, 255, 0.3);
+
+  --background-image-cosmic-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+  --background-image-cosmic-radial: radial-gradient(circle at 50% 50%, #16213e 0%, #1a1a2e 50%, #0f1419 100%);
+
+  --backdrop-blur-xs: 2px;
+  
+  --animation-float: float 6s ease-in-out infinite;
+  --animation-glow: glow 2s ease-in-out infinite alternate;
+  --animation-drift: drift 20s linear infinite;
+  
+  @keyframes float {
+     0%, 100% {
+      transform: translateY(0px);
+    },
+    50% {
+      transform: translateY(-10px);
+    }, 
+  }
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    },
+    100% {
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+    }, 
+  }
+  @keyframes drift {
+    0% {
+      transform: translateX(-100px);
+    }
+    100% {
+      transform: translateX(calc(100vw + 100px));
+    }
+  }
+}
