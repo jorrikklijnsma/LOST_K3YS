@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Music, Youtube, Heart, ExternalLink } from 'lucide-react';
+import { content } from '@/content/content';
+import LOGO from '../../assets/LOGO_TRANS.png';
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -23,8 +25,6 @@ const Footer: React.FC = () => {
       color: 'hover:text-red-400',
     },
   ];
-
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative overflow-hidden bg-black">
@@ -58,19 +58,17 @@ const Footer: React.FC = () => {
               {/* Logo */}
               <div className="mb-6 flex items-center">
                 <img
-                  src="https://placehold.co/50x50/FFD700/000000?text=L3"
+                  src={LOGO}
                   alt="LOST K3YS Logo"
                   className="mr-4 h-12 w-12 rounded-lg"
                 />
                 <div>
                   <div className="text-2xl font-black tracking-wide text-white">LOST K3YS</div>
-                  <div className="text-cosmic-blue text-sm">Hardstyle Duo</div>
                 </div>
               </div>
 
               <p className="mb-6 max-w-md leading-relaxed text-gray-400">
-                Unlocking the frequencies that move your soul. Where AI meets human creativity to
-                create the future of hardstyle music.
+                {content.ui.footer.tagline}
               </p>
 
               {/* Social Links */}
@@ -131,11 +129,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <p className="text-gray-400">
                 <span className="mb-1 block font-medium text-white">Booking:</span>
-                booking@lostk3ys.com
+                {content.bookingSection.directContact.email}
               </p>
               <p className="text-gray-400">
                 <span className="mb-1 block font-medium text-white">General:</span>
-                hello@lostk3ys.com
+                {content.ui.footer.generalEmail}
               </p>
               <p className="text-gray-400">
                 <span className="mb-1 block font-medium text-white">Based in:</span>
@@ -156,7 +154,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center justify-between md:flex-row">
             {/* Copyright */}
             <div className="mb-4 text-sm text-gray-500 md:mb-0">
-              <p>© {currentYear} LOST K3YS. All rights reserved.</p>
+              <p>{content.ui.footer.copyright}</p>
             </div>
 
             {/* Website Credit */}

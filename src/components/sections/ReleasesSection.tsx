@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Play } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import SkewedBackground from '../ui/SkewedBackground';
 import GlassContainer from '../ui/GlassContainer';
+import { content } from '@/content/content';
+
+import HITMAN from '../../assets/albums/HITMAN.jpeg'
+import PLAYGROUND from '../../assets/albums/PLAYGROUND.jpeg'
+import UPSIDE_DOWN from '../../assets/albums/UPSIDE_DOWN.jpeg'
 
 interface Release {
   id: string;
@@ -18,27 +23,27 @@ const ReleasesSection: React.FC = () => {
   const releases: Release[] = [
     {
       id: '1',
-      title: 'Lost Horizon',
+      title: 'playground',
       type: 'single',
-      coverImage: 'https://placehold.co/400x400/1a1a2e/00d4ff?text=Lost+Horizon',
-      spotifyUrl: '#',
-      releaseDate: '2024',
+      coverImage: PLAYGROUND,
+      spotifyUrl: 'https://open.spotify.com/track/1qAA2KKHzlMNczfZzColxE',
+      releaseDate: '2025',
     },
     {
       id: '2',
-      title: 'Echoes of Tomorrow',
+      title: 'hitman',
       type: 'single',
-      coverImage: 'https://placehold.co/400x400/16213e/FFD700?text=Echoes',
-      spotifyUrl: '#',
-      releaseDate: '2024',
+      coverImage: HITMAN,
+      spotifyUrl: 'https://open.spotify.com/track/1P8TdKZr0fSbRPPX95c8Yr',
+      releaseDate: '2025',
     },
     {
       id: '3',
-      title: 'Digital Dreams',
-      type: 'ep',
-      coverImage: 'https://placehold.co/400x400/0f1419/00d4ff?text=Digital+Dreams',
-      spotifyUrl: '#',
-      releaseDate: '2024',
+      title: 'Upside Down',
+      type: 'single',
+      coverImage: UPSIDE_DOWN,
+      spotifyUrl: 'https://open.spotify.com/track/23GoauQuV4GjV2vfjcaHeI',
+      releaseDate: '2025',
     },
   ];
 
@@ -48,7 +53,7 @@ const ReleasesSection: React.FC = () => {
       whileInView={{ y: 0, opacity: 1, rotateX: 0 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="group cursor-pointer"
+      className="group"
       style={{ perspective: '1000px' }}
     >
       <motion.div
@@ -78,7 +83,7 @@ const ReleasesSection: React.FC = () => {
               />
 
               {/* Hover overlay */}
-              <div className="bg-cosmic-blue/2 absolute -inset-5 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="bg-cosmic-blue/2 absolute -inset-5 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100  pointer-events-none" />
             </div>
 
             {/* Track info */}
@@ -97,7 +102,7 @@ const ReleasesSection: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-cosmic-blue inline-flex items-center space-x-2 transition-colors duration-300 hover:text-white"
+                className="text-cosmic-blue inline-flex items-center space-x-2 transition-colors duration-300 hover:text-white cursor-pointer"
               >
                 <span className="text-sm font-medium">Listen on Spotify</span>
                 <ExternalLink className="h-4 w-4" />
@@ -125,7 +130,7 @@ const ReleasesSection: React.FC = () => {
             >
               <GlassContainer className="mb-6 inline-block p-2" variant="blue">
                 <span className="text-cosmic-blue text-sm font-medium tracking-wider uppercase">
-                  Our Music
+                  {content.musicSection.title}
                 </span>
               </GlassContainer>
             </motion.div>
@@ -136,7 +141,7 @@ const ReleasesSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="mb-6 text-4xl leading-tight font-black text-gray-300 md:text-5xl"
-            >
+              >
               Latest
               <span className="from-cosmic-blue block bg-gradient-to-r to-purple-600 bg-clip-text text-transparent">
                 Releases
@@ -150,8 +155,7 @@ const ReleasesSection: React.FC = () => {
               viewport={{ once: true }}
               className="mx-auto max-w-2xl text-xl leading-relaxed text-gray-600"
             >
-              Each track is a journey through sound, crafted to unlock the frequencies that move
-              your soul.
+              {content.musicSection.description}
             </motion.p>
           </div>
 
@@ -171,9 +175,9 @@ const ReleasesSection: React.FC = () => {
             className="mt-16 text-center"
           >
             <GlassContainer className="inline-block" hover={true} variant="blue">
-              <button className="text-cosmic-blue px-8 py-4 text-lg font-medium tracking-wide transition-colors duration-300 hover:text-white">
-                View All Releases
-              </button>
+              <a href='https://open.spotify.com/artist/48j11UjwUaOkG4OIu2lmuE' target='_blank' className="block text-cosmic-blue px-8 py-4 text-lg font-medium tracking-wide transition-colors duration-300 hover:text-white">
+                {content.musicSection.viewAllButton}
+              </a>
             </GlassContainer>
           </motion.div>
         </div>

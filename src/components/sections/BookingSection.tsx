@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Calendar, MapPin, Users, Send, CheckCircle } from 'lucide-react';
 import SkewedBackground from '../ui/SkewedBackground';
 import GlassContainer from '../ui/GlassContainer';
+import { content } from '@/content/content';
 
 interface FormData {
   name: string;
@@ -130,8 +131,7 @@ const BookingSection: React.FC = () => {
               viewport={{ once: true }}
               className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300"
             >
-              Whether it's a festival, club night, or private event, we're ready to bring our
-              signature hardstyle experience to your venue.
+              {content.bookingSection.description}
             </motion.p>
           </div>
 
@@ -264,7 +264,7 @@ const BookingSection: React.FC = () => {
                       onChange={handleInputChange}
                       rows={4}
                       className="bg-glass-white/10 border-glass-white-border focus:border-cosmic-blue w-full resize-none rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors duration-300 focus:outline-none"
-                      placeholder="Tell us more about your event, special requirements, or any other details..."
+                      placeholder={content.ui.bookingForm.additionalDetails}
                     />
                   </div>
 
@@ -298,13 +298,13 @@ const BookingSection: React.FC = () => {
             >
               {/* What We Offer */}
               <GlassContainer className="p-6">
-                <h4 className="mb-4 text-xl font-bold text-white">What We Bring</h4>
+                <h4 className="mb-4 text-xl font-bold text-white">{content.bookingSection.whatWeBring.title}</h4>
                 <div className="space-y-4">
                   {[
-                    { icon: Users, text: 'High-energy hardstyle sets' },
-                    { icon: Calendar, text: 'Flexible scheduling' },
-                    { icon: MapPin, text: 'Travel throughout Netherlands & Europe' },
-                    { icon: Mail, text: 'Professional communication' },
+                    { icon: Users, text: content.bookingSection.whatWeBring.items.energy },
+                    { icon: Calendar, text: content.bookingSection.whatWeBring.items.flexible },
+                    { icon: MapPin, text: content.bookingSection.whatWeBring.items.travel },
+                    { icon: Mail, text: content.bookingSection.whatWeBring.items.communication },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <item.icon className="text-cosmic-blue h-5 w-5" />
@@ -318,11 +318,10 @@ const BookingSection: React.FC = () => {
               <GlassContainer className="p-6" variant="blue">
                 <h4 className="mb-4 text-xl font-bold text-white">Technical Requirements</h4>
                 <div className="space-y-2 text-sm text-gray-300">
-                  <p>• Professional DJ mixer (Pioneer CDJ preferred)</p>
-                  <p>• Quality sound system with sub-bass capability</p>
-                  <p>• Stage lighting (we can provide light show)</p>
-                  <p>• Power supply for equipment</p>
-                  <p>• Green room/preparation area</p>
+                  {content.bookingSection.technicalRequirements.items.map(requirement => {
+                    return (<p>• {requirement}</p>)
+
+                  })}
                 </div>
               </GlassContainer>
 
@@ -332,10 +331,10 @@ const BookingSection: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail className="text-cosmic-blue h-5 w-5" />
-                    <span className="text-gray-300">booking@lostk3ys.com</span>
+                    <span className="text-gray-300">{content.bookingSection.directContact.email}</span>
                   </div>
                   <p className="text-sm text-gray-400">
-                    For urgent requests, use the contact form above for fastest response.
+                    {content.bookingSection.directContact.note}
                   </p>
                 </div>
               </GlassContainer>
@@ -345,7 +344,7 @@ const BookingSection: React.FC = () => {
                 <h4 className="mb-2 text-lg font-bold text-white">Response Time</h4>
                 <p className="text-cosmic-blue mb-2 text-2xl font-bold">24 Hours</p>
                 <p className="text-sm text-gray-300">
-                  We aim to respond to all booking requests within one business day.
+                  {content.ui.bookingForm.responseTime}
                 </p>
               </GlassContainer>
             </motion.div>

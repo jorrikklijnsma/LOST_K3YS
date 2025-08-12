@@ -6,6 +6,7 @@ import GlassContainer from '../ui/GlassContainer';
 import JORRIK from '../../assets/JORRIK_SMALL.jpg';
 import MEINKE from '../../assets/MEINKE_SMALL.jpg';
 import LOGO from '../../assets/LOGO_TRANS.png';
+import { content } from '@/content/content';
 
 const InfoSection: React.FC = () => {
   return (
@@ -30,14 +31,14 @@ const InfoSection: React.FC = () => {
                 >
                   <GlassContainer className="mb-6 inline-block p-2" variant="blue">
                     <span className="text-cosmic-blue text-sm font-medium tracking-wider uppercase">
-                      Our Story
+                      {content.infoSection.ourStory.title}
                     </span>
                   </GlassContainer>
                 </motion.div>
 
                 <div className='mb-6 flex flex-col justify-center items-center gap-6'>
                   <h2 className="text-4xl leading-tight font-black text-white md:text-5xl">
-                    The Story Behind:
+                    {content.infoSection.ourStory.subTitle}
                     </h2>
                     <img
                       src={LOGO}
@@ -49,18 +50,13 @@ const InfoSection: React.FC = () => {
 
               <GlassContainer className="p-8" variant="default">
                 <p className="mb-6 text-lg leading-relaxed text-gray-300">
-                  Every great melody begins with a search for the perfect key. For us, those keys
-                  weren't just musical notes - they were the missing pieces of our creative souls.
+                  {content.infoSection.ourStory.paragraph1}
                 </p>
                 <p className="mb-6 text-lg leading-relaxed text-gray-300">
-                  We spent years searching through different sounds, different styles, different
-                  energies. But it wasn't until we found hardstyle that we discovered what we'd been
-                  looking for all along.
+                  {content.infoSection.ourStory.paragraph2}
                 </p>
                 <p className="text-lg leading-relaxed text-gray-300">
-                  Now, those once-lost keys unlock frequencies that move crowds, create memories,
-                  and build connections. Every track we create is about helping others find their
-                  own lost keys.
+                  {content.infoSection.ourStory.paragraph3}
                 </p>
               </GlassContainer>
             </motion.div>
@@ -84,14 +80,11 @@ const InfoSection: React.FC = () => {
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <div className="bg-cosmic-blue absolute -right-1 -bottom-1 h-6 w-6 rounded-full border-2 border-white"></div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-2xl font-bold text-white">Jorrik</h3>
-                    <p className="text-cosmic-blue mb-3 font-medium">Producer & Sound Designer</p>
+                    <h3 className="mb-2 text-2xl font-bold text-cosmic-blue">{content.infoSection.jorrik.title}</h3>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      The technical mastermind behind our sound. Jorrik transforms raw emotion into
-                      powerful hardstyle beats that hit your soul.
+                      {content.infoSection.jorrik.content}
                     </p>
                   </div>
                 </div>
@@ -108,14 +101,11 @@ const InfoSection: React.FC = () => {
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <div className="bg-cosmic-blue absolute -right-1 -bottom-1 h-6 w-6 rounded-full border-2 border-white"></div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-2xl font-bold text-white">Meinke</h3>
-                    <p className="text-cosmic-blue mb-3 font-medium">Creative Director & DJ</p>
+                    <h3 className="mb-2 text-2xl font-bold text-cosmic-blue">{content.infoSection.meinke.title}</h3>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      The creative force that brings our vision to life. Meinke crafts the
-                      experiences that turn our music into unforgettable moments.
+                      {content.infoSection.meinke.content}
                     </p>
                   </div>
                 </div>
@@ -123,9 +113,9 @@ const InfoSection: React.FC = () => {
 
               {/* Partnership */}
               <GlassContainer className="p-6 text-center" variant="blue">
-                <p className="mb-2 text-lg font-medium text-white">Together Since 2024</p>
+                <p className="mb-2 text-lg font-medium text-white">{content.infoSection.together.title}</p>
                 <p className="text-sm text-gray-300">
-                  Two creative minds, one unstoppable force in hardstyle music.
+                  {content.infoSection.together.content}
                 </p>
               </GlassContainer>
             </motion.div>
