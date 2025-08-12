@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SPACE from '../../assets/space.jpeg';
+import SPACE from '../../../public/space_comp.jpeg';
 
 const HeroSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -17,44 +17,7 @@ const HeroSection: React.FC = () => {
         {/* Placeholder for video/image background */}
         <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900">
           {/* Placeholder nebula background - replace with actual image/video */}
-          <div className={`JOE JOE absolute inset-0 bg-[url(${SPACE})] bg-cover bg-center opacity-80`} />
-        </div>
-
-        {/* Scattered stars effect */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 150 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-[1px] h-[1px] bg-white rounded-full opacity-60"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-              }}
-            />
-          ))}
-
-          {/* Larger glowing stars */}
-          {Array.from({ length: 20 }).map((_, i) => (
-            <motion.div
-              key={`glow-${i}`}
-              className="absolute w-[2px] h-[2px] bg-white rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                boxShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
-              }}
-              animate={{
-                opacity: [0.3, 1, 0.3],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
+          <div className="absolute inset-0 bg-[url(./space_comp.jpeg)] bg-cover bg-center opacity-80" />
         </div>
 
         {/* Skewed bottom section transition */}
