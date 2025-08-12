@@ -119,7 +119,7 @@ const BookingSection: React.FC = () => {
               className="mb-6 text-4xl leading-tight font-black text-white md:text-5xl"
             >
               Ready to
-              <span className="block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-cosmic-blue to-cosmic-blue-glow bg-clip-text text-transparent">
                 Unlock the Experience?
               </span>
             </motion.h2>

@@ -5,7 +5,6 @@ import GlassContainer from '../ui/GlassContainer';
 
 import JORRIK from '../../assets/JORRIK_SMALL.jpg';
 import MEINKE from '../../assets/MEINKE_SMALL.jpg';
-import LOGO from '../../assets/LOGO_TRANS.png';
 import { content } from '@/content/content';
 
 const InfoSection: React.FC = () => {
@@ -35,17 +34,9 @@ const InfoSection: React.FC = () => {
                     </span>
                   </GlassContainer>
                 </motion.div>
-
                 <div className='mb-6 flex flex-col justify-center items-center gap-6'>
-                  <h2 className="text-4xl leading-tight font-black text-white md:text-5xl">
-                    {content.infoSection.ourStory.subTitle}
-                    </h2>
-                    <img
-                      src={LOGO}
-                      alt="Logo"
-                      className="max-w-50 h-full w-full object-cover"
-                      />
                     </div>
+                  <h2 className="text-4xl leading-tight font-black text-white md:text-5xl">{content.infoSection.ourStory.subTitle}</h2>
               </div>
 
               <GlassContainer className="p-8" variant="default">

@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 const content = {
 ui: {
   menu: {
-    logoAlt: 'Lost K3ys Logo',
+    logoAlt: 'LOST K3YS Logo',
     infoPage: 'Info',
     releasesPage: 'Releases',
     bookingPage: 'Booking',
@@ -36,71 +36,71 @@ ui: {
 infoSection: {
   ourStory: {
     title: 'Our Story',
-    subTitle: 'The Story Behind:',
-    paragraph1: 'Have you ever lost your keys? That moment when you\'re suddenly detached from reality, freed from everything that ties you down. You can\'t just go home, slip back into routine. You\'re forced into a different space where anything feels possible.',
-    paragraph2: 'That\'s where we found ourselves - and where our music lives. Lost K3ys represents that liberated world you enter the moment you lose your keys. The space between what is and what could be.',
-    paragraph3: 'Our hardstyle tracks are born in this reality. Every song is an invitation to get lost with us, to leave the familiar behind and discover what happens when you stop trying to find your way back.'
+    subTitle: 'The Reality You Enter When You Lose Your Keys',
+    paragraph1: 'Ever lost your keys? That split second of panic, followed by something unexpected - complete freedom. You can\'t just go home, can\'t slip back into routine. You\'re suddenly living in a different reality where anything is possible.',
+    paragraph2: 'That moment of liberation is where we found our sound. LOST K3YS isn\'t just a name - it\'s the space between worlds where our hardstyle lives. We\'ve been obsessed with this music for years, but it wasn\'t until we embraced getting lost that we found what we were really meant to create.',
+    paragraph3: 'Every track we drop is born in that liberated reality. No compromises, no playing it safe. Just authentic hardstyle that invites you to get lost with us and discover what happens when you stop trying to find your way back to ordinary.'
   },
   
   jorrik: {
     title: 'Jorrik',
-    content: 'The architect behind our raw energy. Years of EDM production taught him how to build tension, create drops that hit exactly right, and take people on a journey through sound. He brings that precision to every Lost K3ys track, crafting the technical foundation that makes you want to lose yourself in the music.'
+    content: 'The raw energy mastermind who\'s been deep in electronic music production for years. Before hardstyle took over, he was already crafting EDM tracks and understanding what makes people lose their minds on the dancefloor. Now he channels all that experience into building drops that hit different and creating the technical power that drives every LOST K3YS banger.'
   },
   
   meinke: {
     title: 'Meinke',
-    content: '15+ years of saxophone mastery meets hardstyle passion. Her classical training evolved into something deeper when she discovered the genre that matched her love for both melody and intensity. Whether laying down melodic lines or adding vocals to raw bangers, she brings the soul to every track.'
+    content: 'Classical saxophone training for 15+ years, then hardstyle passion took over completely. She discovered a genre that could be both beautiful and absolutely mental - exactly what she\'d been searching for. Her vocals and melodic work bring the emotional depth to our tracks, whether it\'s a euphoric anthem or adding that human touch to the rawest drops.'
   },
   
   together: {
-    title: 'Together Since 2025',
-    content: 'Two creative minds, one unstoppable force in hardstyle music. From melodic anthems to raw destroyers, we create authentic tracks that tell stories and move crowds.'
+    title: 'LOST K3YS Since 2025',
+    content: 'Two music obsessives who found each other and found their sound. From melodic masterpieces to raw destruction, we create hardstyle that\'s 100% authentic. No following trends, just making the music we genuinely love and want to hear blasting through festival speakers.'
   }
 },
 
 musicSection: {
   title: 'Our Music',
-  subTitle: 'Latest Releases',
-  description: 'Each track is a journey through sound, crafted to unlock the frequencies that move your soul.',
-  viewAllButton: 'View All Releases'
+  subTitle: 'Fresh Drops, No Compromises',
+  description: 'Every track is a journey into that liberated reality where ordinary rules don\'t apply. We drop new music regularly because inspiration doesn\'t follow schedules.',
+  viewAllButton: 'Stream Everything'
 },
 
 processSection: {
-  title: 'Our Process',
-  subTitle: 'Where Technology Meets Soul',
-  intro: 'We blend cutting-edge tools with years of musical experience to create our signature hardstyle sound.',
+  title: 'How We Create',
+  subTitle: 'Music That Hits Different',
+  intro: 'We use every tool available to craft hardstyle that\'s both technically solid and emotionally powerful. No shortcuts, just pure dedication to the sound.',
   
   step1: {
-    title: 'Creative Foundation',
-    description: 'We start with our musical vision and use modern production tools to explore sonic possibilities.',
-    features: ['Custom workflows', 'Sound exploration', 'Creative experimentation']
+    title: 'Foundation Building',
+    description: 'We start with the vibe we want to create, then use modern production techniques to explore every possibility.',
+    features: ['Custom sound design', 'Melodic exploration', 'Energy mapping']
   },
   
   step2: {
-    title: 'Human Enhancement',
-    description: 'Our musical expertise and creative vision shape every element into something uniquely Lost K3ys.',
-    features: ['Creative direction', 'Melody crafting', 'Emotional tuning']
+    title: 'The Human Touch',
+    description: 'This is where years of musical experience kick in. Every element gets shaped by our vision until it\'s unmistakably LOST K3YS.',
+    features: ['Meinke\'s vocal magic', 'Jorrik\'s production mastery', 'Emotional fine-tuning']
   },
   
   step3: {
-    title: 'Professional Production',
-    description: 'Industry-standard tools and techniques ensure our tracks meet the highest quality standards.',
-    features: ['Ableton Live production', 'Professional mastering', 'Club-ready quality']
+    title: 'Festival Ready',
+    description: 'Every track gets the full professional treatment. If it\'s not ready to blow minds on the biggest sound systems, it\'s not ready.',
+    features: ['Club-tested masters', 'Maximum impact mixing', 'Dancefloor-proven quality']
   },
   
   philosophy: {
-    title: 'Our Philosophy',
+    title: 'Our Approach',
     creativity: {
-      title: 'Technology as Partner',
-      content: 'We use modern tools not to replace creativity, but to push the boundaries of what\'s possible in hardstyle music.'
+      title: 'Tools, Not Rules',
+      content: 'We use whatever technology helps us push boundaries, but the creative vision always comes first. Modern production capabilities just help us get there faster.'
     },
     humanTouch: {
-      title: 'Soul is Everything',
-      content: 'Every track is infused with our personal experiences, emotions, and musical vision. Technology generates possibilities, but we craft the soul of each song.'
+      title: 'Authenticity Above All',
+      content: 'Every single track carries our genuine passion for hardstyle. We don\'t make music to fit formulas - we make music that moves us, and trust that it\'ll move you too.'
     },
     innovation: {
-      title: 'Innovation Through Fusion',
-      content: 'By combining modern production capabilities with human intuition and years of musical training, we create hardstyle that\'s both technically solid and emotionally powerful.'
+      title: 'Pushing Forward',
+      content: 'Hardstyle keeps evolving, and so do we. By combining cutting-edge production with old-school musical training and pure genre love, we create tracks that feel both fresh and timeless.'
     }
   }
 },
@@ -134,10 +134,6 @@ bookingSection: {
     title: 'Direct Contact',
     email: 'booking@dodoyoyo.nl',
     note: 'For urgent requests, use the contact form above for fastest response.'
-  },
-
-  response: {
-    note: 'We aim to respond to all booking requests within one business day.',
   }
 }
 };
