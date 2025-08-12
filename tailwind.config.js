@@ -1,20 +1,4 @@
-@import "tailwindcss";
-
-@theme {
-  color-cosmic-primary: #1a1a2e;
-  color-cosmic-secondary: #16213e;
-  color-cosmic-tertiary: #0f1419;
-  color-cosmic-blue: #00d4ff;
-  color-cosmic-blueglow: rgba(0, 212, 255, 0.5);
-  color-glass: {
-          white: 'rgba(255, 255, 255, 0.15)',
-          'white-border': 'rgba(255, 255, 255, 0.2)',
-          blue: 'rgba(0, 212, 255, 0.1)',
-          'blue-border': 'rgba(0, 212, 255, 0.3)',
-        }
-}
- 
-
+export default {
   theme: {
     extend: {
       colors: {
