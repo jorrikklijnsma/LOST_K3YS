@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SPACE from '../../../public/space_comp.jpeg';
+import LOGO from '../../assets/LOGO_TRANS.png';
+import SPACE_VIDEO from '../../assets/space_comp.mp4';
 
 const HeroSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,17 +12,36 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden">
+    <section id="hero" className="relative min-h-[150svh] overflow-hidden">
       {/* Space/Nebula Background */}
       <div className="absolute inset-0">
-        {/* Placeholder for video/image background */}
-        <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900">
-          {/* Placeholder nebula background - replace with actual image/video */}
-          <div className="absolute inset-0 bg-[url(./space_comp.jpeg)] bg-cover bg-center opacity-80" />
-        </div>
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-80"
+          style={{ 
+            filter: 'brightness(0.7) contrast(1.1)',
+          }}
+          onLoadedData={(e) => {
+            const video = e.target as HTMLVideoElement;
+            video.playbackRate = 11;
+          }}
+        >
+          <source src={SPACE_VIDEO} type="video/mp4" />
+          {/* Fallback to image if video fails */}
+          <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900">
+            <div className="absolute inset-0 bg-[url(./space_comp.jpeg)] bg-cover bg-center opacity-80" />
+          </div>
+        </video>
+        
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
 
         {/* Skewed bottom section transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent transform skew-y-1 origin-bottom-right" />
+        <div className="absolute top-full left-0 right-0 h-[50svh] bg-gradient-to-b from-cosmic-tertiary to-50% to-cosmic-primary transform -translate-y-[50svh] -skew-y-10 origin-bottom-right" />
       </div>
 
       {/* Hero Content */}
@@ -31,23 +51,14 @@ const HeroSection: React.FC = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mb-12"
+          className="relative mb-12 mt-20 grid place-items-center"
         >
-          <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-black leading-none">
-            {/* LOST - filled */}
-            <div className="text-white mb-4">
-              LOST
-            </div>
-            {/* K3YS - outlined */}
-            <div 
-              className="text-transparent font-black"
-              style={{
-                WebkitTextStroke: '3px white'
-              }}
-            >
-              K3YS
-            </div>
-          </h1>
+          <div className="absolute h-[75%] w-[75%] bg-black/80 rounded-full blur-3xl" />
+          <img
+            src={LOGO}
+            alt="Logo"
+            className="relative max-w-[50svw] h-full w-full object-cover"
+            />
         </motion.div>
 
         {/* CTA Button */}
@@ -57,7 +68,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <button onClick={() => scrollToSection('booking')}
-                 className="px-8 py-4 border-2 border-white/40 rounded-lg text-white hover:bg-white/10 hover:border-white/60 transition-all duration-300 font-medium text-lg tracking-wide cursor-pointer">
+                 className="mb-20 px-8 py-4 border-2 border-white/40 rounded-lg text-white hover:bg-white/10 hover:border-white/60 transition-all duration-300 font-medium text-lg tracking-wide cursor-pointer">
             BOOK US
           </button>
         </motion.div>

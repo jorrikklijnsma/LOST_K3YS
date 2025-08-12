@@ -78,11 +78,7 @@ const ReleasesSection: React.FC = () => {
               />
 
               {/* Hover overlay */}
-              <div className="bg-cosmic-blue/20 absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="rounded-full bg-white/20 p-4 backdrop-blur-sm">
-                  <Play className="h-8 w-8 text-white" fill="white" />
-                </div>
-              </div>
+              <div className="bg-cosmic-blue/2 absolute -inset-5 rounded-xl flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
 
             {/* Track info */}
@@ -118,7 +114,7 @@ const ReleasesSection: React.FC = () => {
 
   return (
     <section id="releases" className="relative">
-      <SkewedBackground variant="white" className="py-24">
+      <SkewedBackground variant='cosmic' className="py-24">
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
             <motion.div
@@ -139,7 +135,7 @@ const ReleasesSection: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="mb-6 text-4xl leading-tight font-black text-gray-900 md:text-5xl"
+              className="mb-6 text-4xl leading-tight font-black text-gray-300 md:text-5xl"
             >
               Latest
               <span className="from-cosmic-blue block bg-gradient-to-r to-purple-600 bg-clip-text text-transparent">

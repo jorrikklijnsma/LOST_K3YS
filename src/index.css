@@ -2,16 +2,16 @@
 
   @theme {
 
-    --color-cosmic-primary: oklch(10.2% 0.15 295);
+    --color-cosmic-primary: oklch(3.2% 0.15 295);
     --color-cosmic-secondary: oklch(13.3% 0.21 286);
     --color-cosmic-tertiary: oklch(6.1% 0.04 261);
     --color-cosmic-blue: oklch(78.6% 0.44 229);
     --color-cosmic-blue-glow: rgba(0, 212, 255, 0.5);
 
-    --color-white: rgba(255, 255, 255, 0.15);
-    --color-white-border: rgba(255, 255, 255, 0.2);
-    --color-white-blue: rgba(0, 212, 255, 0.1);
-    --color-white-blue-border: rgba(0, 212, 255, 0.3);
+    --color-glass-white: rgba(255, 255, 255, 0.15);
+    --color-glass-white-border: rgba(255, 255, 255, 0.2);
+    --color-glass-white-blue: rgba(0, 212, 255, 0.1);
+    --color-glass-white-blue-border: rgba(0, 212, 255, 0.3);
 
     --background-image-cosmic-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
     --background-image-cosmic-radial: radial-gradient(circle at 50% 50%, #16213e 0%, #1a1a2e 50%, #0f1419 100%);
@@ -59,7 +59,7 @@
 
 @layer base {
   * {
-    @apply border-white-border;
+    @apply border-glass-white-border;
   }
   
   body {

@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-white hover:text-gray-300 transition-all duration-300 font-normal text-lg ${activeSection === item.id && 'scale-110 border-b-1'}`}
+                className={`text-white hover:text-gray-300 transition-all duration-300 font-normal text-lg ${activeSection === item.id && 'scale-110 text-white border-b-1'}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

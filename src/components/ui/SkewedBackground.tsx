@@ -18,7 +18,7 @@ const SkewedBackground: React.FC<SkewedBackgroundProps> = ({
       case 'white':
         return 'bg-gray-100';
       case 'cosmic-to-white':
-        return 'bg-gradient-to-b from-cosmic-primary via-cosmic-secondary to-gray-100';
+        return 'bg-gradient-to-b from-cosmic-primary via-cosmic-secondary to-black';
       case 'white-to-cosmic':
         return 'bg-gradient-to-b from-gray-100 to-cosmic-primary';
       default:
@@ -26,19 +26,9 @@ const SkewedBackground: React.FC<SkewedBackgroundProps> = ({
     }
   };
 
-  const getSkewClasses = () => {
-    if (variant.includes('to')) {
-      return 'relative overflow-hidden';
-    }
-    return 'relative overflow-hidden';
-  };
-
   return (
-    <div className={`${getBackgroundClasses()} ${getSkewClasses()} ${className}`}>
+    <div className={`${getBackgroundClasses()} relative ${className}`}>
       {/* Skewed overlay for transition sections */}
-      {variant === 'cosmic-to-white' && (
-        <div className="absolute inset-0 origin-top-right translate-y-1/2 -skew-y-3 transform bg-gray-100" />
-      )}
       {variant === 'white-to-cosmic' && (
         <div className="bg-cosmic-gradient absolute inset-0 origin-bottom-left -translate-y-1/2 skew-y-3 transform" />
       )}

@@ -3,11 +3,15 @@ import { motion } from 'framer-motion';
 import SkewedBackground from '../ui/SkewedBackground';
 import GlassContainer from '../ui/GlassContainer';
 
+import JORRIK from '../../assets/JORRIK_SMALL.jpg';
+import MEINKE from '../../assets/MEINKE_SMALL.jpg';
+import LOGO from '../../assets/LOGO_TRANS.png';
+
 const InfoSection: React.FC = () => {
   return (
     <section id="info" className="relative">
       <SkewedBackground variant="cosmic-to-white" className="py-24">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 mb-[25svh] -mt-[25svh]">
           <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2">
             {/* Story Content */}
             <motion.div
@@ -31,12 +35,16 @@ const InfoSection: React.FC = () => {
                   </GlassContainer>
                 </motion.div>
 
-                <h2 className="mb-6 text-4xl leading-tight font-black text-white md:text-5xl">
-                  The Story Behind
-                  <span className="block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
-                    LOST K3YS
-                  </span>
-                </h2>
+                <div className='mb-6 flex flex-col justify-center items-center gap-6'>
+                  <h2 className="text-4xl leading-tight font-black text-white md:text-5xl">
+                    The Story Behind:
+                    </h2>
+                    <img
+                      src={LOGO}
+                      alt="Logo"
+                      className="max-w-50 h-full w-full object-cover"
+                      />
+                    </div>
               </div>
 
               <GlassContainer className="p-8" variant="default">
@@ -71,7 +79,7 @@ const InfoSection: React.FC = () => {
                   <div className="relative">
                     <div className="border-cosmic-blue/30 h-20 w-20 overflow-hidden rounded-full border-2 md:h-24 md:w-24">
                       <img
-                        src="https://placehold.co/200x200/333333/FFFFFF?text=Jorrik"
+                        src={JORRIK}
                         alt="Jorrik"
                         className="h-full w-full object-cover"
                       />
@@ -89,24 +97,24 @@ const InfoSection: React.FC = () => {
                 </div>
               </GlassContainer>
 
-              {/* Meine */}
+              {/* Meinke */}
               <GlassContainer className="p-6" hover={true}>
                 <div className="flex items-center space-x-6">
                   <div className="relative">
                     <div className="border-cosmic-blue/30 h-20 w-20 overflow-hidden rounded-full border-2 md:h-24 md:w-24">
                       <img
-                        src="https://placehold.co/200x200/333333/FFFFFF?text=Meine"
-                        alt="Meine"
+                        src={MEINKE}
+                        alt="Meinke"
                         className="h-full w-full object-cover"
                       />
                     </div>
                     <div className="bg-cosmic-blue absolute -right-1 -bottom-1 h-6 w-6 rounded-full border-2 border-white"></div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-2xl font-bold text-white">Meine</h3>
+                    <h3 className="mb-2 text-2xl font-bold text-white">Meinke</h3>
                     <p className="text-cosmic-blue mb-3 font-medium">Creative Director & DJ</p>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      The creative force that brings our vision to life. Meine crafts the
+                      The creative force that brings our vision to life. Meinke crafts the
                       experiences that turn our music into unforgettable moments.
                     </p>
                   </div>
