@@ -38,13 +38,6 @@ const TechSection: React.FC = () => {
     },
   ];
 
-  const tools = [
-    { name: 'AI Composition', usage: 85 },
-    { name: 'Human Creativity', usage: 95 },
-    { name: 'Sound Design', usage: 90 },
-    { name: 'Mixing & Mastering', usage: 88 },
-  ];
-
   return (
     <section id="tech" className="relative">
       <SkewedBackground variant="white-to-cosmic" className="py-24">
